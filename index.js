@@ -1,11 +1,14 @@
 const express = require('express');
 const app = express();
-const PORT = 3000;
 
 app.get('/', (req, res) => {
-    res.send('<h1>Node.js Project: Deploying via GitHub Actions</h1>');
+  res.send('Application Running');
 });
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+app.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
+
+app.listen(3000, () => {
+  console.log('Server running on port 3000');
 });

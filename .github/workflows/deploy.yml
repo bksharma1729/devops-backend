@@ -1,6 +1,7 @@
 name: Docker Deployment
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
 
@@ -32,5 +33,9 @@ jobs:
             docker rm backend-container || true
             docker run -d -p 3000:3000 --name backend-container backend-app
 
-            # 4. Storage Maintenance
+            # 4. Verify the app is responding
+            sleep 3
+            curl -f http://localhost:3000
+
+            # 5. Storage Maintenance
             docker image prune -f
