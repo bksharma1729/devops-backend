@@ -22,7 +22,7 @@ pipeline {
 
                 sleep 60
 
-                curl -f http://127.0.0.1:3001/health
+                docker exec devops-backend-test wget -qO- http://localhost:3000/health
 
                 docker stop devops-backend-test
                 docker rm devops-backend-test
