@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-    res.send('Application Running on port number 3000');
+    res.send('Version 2');
 });
 
 app.get('/health', (req, res) => {

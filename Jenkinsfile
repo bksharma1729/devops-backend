@@ -20,7 +20,7 @@ pipeline {
                   -p 3001:3000 \
                   devops-backend
 
-                sleep 20
+                sleep 60
 
                 curl -f http://localhost:3001/health
 
